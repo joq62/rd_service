@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module rd_store</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module rd_store</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>The storage management functions for resource discovery.
+
+
+<h2><a name="description">Description</a></h2>The storage management functions for resource discovery
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#delete-0">delete/0</a></td><td>
+  Deletes storage.</td></tr>
+<tr><td valign="top"><a href="#delete_callback_module-1">delete_callback_module/1</a></td><td>Remove a callback module.</td></tr>
+<tr><td valign="top"><a href="#delete_deleted_resource_tuple-0">delete_deleted_resource_tuple/0</a></td><td>
+  clear deleted resource cache.</td></tr>
+<tr><td valign="top"><a href="#delete_local_resource_tuple-1">delete_local_resource_tuple/1</a></td><td>Remove a local resource.</td></tr>
+<tr><td valign="top"><a href="#delete_resource_tuple-1">delete_resource_tuple/1</a></td><td>Remove a single resource from cache.</td></tr>
+<tr><td valign="top"><a href="#delete_target_resource_type-1">delete_target_resource_type/1</a></td><td>Remove a target type.</td></tr>
+<tr><td valign="top"><a href="#get_all_resources-0">get_all_resources/0</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#get_callback_modules-0">get_callback_modules/0</a></td><td>Output the callback modules.</td></tr>
+<tr><td valign="top"><a href="#get_deleted_resource_tuples-0">get_deleted_resource_tuples/0</a></td><td>
+  get resources which we deleted.</td></tr>
+<tr><td valign="top"><a href="#get_local_resource_tuples-0">get_local_resource_tuples/0</a></td><td>Output the local resources.</td></tr>
+<tr><td valign="top"><a href="#get_num_resource-1">get_num_resource/1</a></td><td>Outputs the number of resource types.</td></tr>
+<tr><td valign="top"><a href="#get_num_resource_types-0">get_num_resource_types/0</a></td><td>Outputs the number of resource types.</td></tr>
+<tr><td valign="top"><a href="#get_resource_types-0">get_resource_types/0</a></td><td>Outputs the types of resources.</td></tr>
+<tr><td valign="top"><a href="#get_resources-1">get_resources/1</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#get_target_resource_types-0">get_target_resource_types/0</a></td><td>Output the target types.</td></tr>
+<tr><td valign="top"><a href="#new-0">new/0</a></td><td>LPS stands for "Local Parameter Store".</td></tr>
+<tr><td valign="top"><a href="#round_robin_get-1">round_robin_get/1</a></td><td>Gets resource of a particular type outputs and places it in last position.</td></tr>
+<tr><td valign="top"><a href="#store_callback_modules-1">store_callback_modules/1</a></td><td>Store the callback modules for the local system.</td></tr>
+<tr><td valign="top"><a href="#store_local_resource_tuples-1">store_local_resource_tuples/1</a></td><td>Store the "I haves" or local_resources for resource discovery.</td></tr>
+<tr><td valign="top"><a href="#store_resource_tuple-1">store_resource_tuple/1</a></td><td>Adds a new resource.</td></tr>
+<tr><td valign="top"><a href="#store_resource_tuples-1">store_resource_tuples/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#store_target_resource_types-1">store_target_resource_types/1</a></td><td>Store the target types for the local system.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="delete-0">delete/0</a></h3>
+<div class="spec">
+<p><tt>delete() -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>
+  Deletes storage</p>
+
+<h3 class="function"><a name="delete_callback_module-1">delete_callback_module/1</a></h3>
+<div class="spec">
+<p><tt>delete_callback_module(CallBackModule::atom()) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Remove a callback module.</p>
+
+<h3 class="function"><a name="delete_deleted_resource_tuple-0">delete_deleted_resource_tuple/0</a></h3>
+<div class="spec">
+<p><tt>delete_deleted_resource_tuple() -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>
+  clear deleted resource cache. after the network was synched</p>
+
+<h3 class="function"><a name="delete_local_resource_tuple-1">delete_local_resource_tuple/1</a></h3>
+<div class="spec">
+<p><tt>delete_local_resource_tuple(LocalResource::<a href="#type-resource_tuple">resource_tuple()</a>) -&gt; ok | {error, local_resource_not_found, <a href="#type-resource_tuple">resource_tuple()</a>}</tt><br></p>
+<p> </p>
+</div><p>Remove a local resource.</p>
+
+<h3 class="function"><a name="delete_resource_tuple-1">delete_resource_tuple/1</a></h3>
+<div class="spec">
+<p><tt>delete_resource_tuple(X1::<a href="#type-resource_tuple">resource_tuple()</a>) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Remove a single resource from cache.</p>
+
+<h3 class="function"><a name="delete_target_resource_type-1">delete_target_resource_type/1</a></h3>
+<div class="spec">
+<p><tt>delete_target_resource_type(TargetType::atom()) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Remove a target type.</p>
+
+<h3 class="function"><a name="get_all_resources-0">get_all_resources/0</a></h3>
+<div class="spec">
+<p><tt>get_all_resources() -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="get_callback_modules-0">get_callback_modules/0</a></h3>
+<div class="spec">
+<p><tt>get_callback_modules() -&gt; [atom()]</tt><br></p>
+<p> </p>
+</div><p>Output the callback modules.</p>
+
+<h3 class="function"><a name="get_deleted_resource_tuples-0">get_deleted_resource_tuples/0</a></h3>
+<div class="spec">
+<p><tt>get_deleted_resource_tuples() -&gt; [<a href="#type-resource_tuple">resource_tuple()</a>]</tt><br></p>
+<p> </p>
+</div><p>
+  get resources which we deleted</p>
+
+<h3 class="function"><a name="get_local_resource_tuples-0">get_local_resource_tuples/0</a></h3>
+<div class="spec">
+<p><tt>get_local_resource_tuples() -&gt; [<a href="#type-resource_tuple">resource_tuple()</a>]</tt><br></p>
+<p> </p>
+</div><p>Output the local resources.</p>
+
+<h3 class="function"><a name="get_num_resource-1">get_num_resource/1</a></h3>
+<div class="spec">
+<p><tt>get_num_resource(Type::<a href="#type-resource_type">resource_type()</a>) -&gt; integer()</tt><br></p>
+<p> </p>
+</div><p>Outputs the number of resource types.</p>
+
+<h3 class="function"><a name="get_num_resource_types-0">get_num_resource_types/0</a></h3>
+<div class="spec">
+<p><tt>get_num_resource_types() -&gt; integer()</tt><br></p>
+<p> </p>
+</div><p>Outputs the number of resource types.</p>
+
+<h3 class="function"><a name="get_resource_types-0">get_resource_types/0</a></h3>
+<div class="spec">
+<p><tt>get_resource_types() -&gt; [<a href="#type-resource_type">resource_type()</a>]</tt><br></p>
+<p> </p>
+</div><p>Outputs the types of resources.
+  Return cached resource types</p>
+
+<h3 class="function"><a name="get_resources-1">get_resources/1</a></h3>
+<div class="spec">
+<p><tt>get_resources(Type::<a href="#type-resource_type">resource_type()</a>) -&gt; [<a href="#type-resource">resource()</a>]</tt><br></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="get_target_resource_types-0">get_target_resource_types/0</a></h3>
+<div class="spec">
+<p><tt>get_target_resource_types() -&gt; [atom()]</tt><br></p>
+<p> </p>
+</div><p>Output the target types. These are the resource types we wish
+       to find within our node cluster.</p>
+
+<h3 class="function"><a name="new-0">new/0</a></h3>
+<div class="spec">
+<p><tt>new() -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>LPS stands for "Local Parameter Store".
+  Initialises persistent storage.</p>
+
+<h3 class="function"><a name="round_robin_get-1">round_robin_get/1</a></h3>
+<div class="spec">
+<p><tt>round_robin_get(Type::<a href="#type-resource_type">resource_type()</a>) -&gt; {ok, <a href="#type-resource">resource()</a>} | {error, not_found}</tt><br></p>
+<p> </p>
+</div><p>Gets resource of a particular type outputs and places it in last position.</p>
+
+<h3 class="function"><a name="store_callback_modules-1">store_callback_modules/1</a></h3>
+<div class="spec">
+<p><tt>store_callback_modules(Modules::[atom()]) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Store the callback modules for the local system.</p>
+
+<h3 class="function"><a name="store_local_resource_tuples-1">store_local_resource_tuples/1</a></h3>
+<div class="spec">
+<p><tt>store_local_resource_tuples(LocalResourceTuples::[<a href="#type-resource_tuple">resource_tuple()</a>]) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Store the "I haves" or local_resources for resource discovery.</p>
+
+<h3 class="function"><a name="store_resource_tuple-1">store_resource_tuple/1</a></h3>
+<div class="spec">
+<p><tt>store_resource_tuple(X1::<a href="#type-resource_tuple">resource_tuple()</a>) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Adds a new resource.</p>
+
+<h3 class="function"><a name="store_resource_tuples-1">store_resource_tuples/1</a></h3>
+<div class="spec">
+<p><tt>store_resource_tuples(ResourceTuples::[<a href="#type-resource_tuple">resource_tuple()</a>]) -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="store_target_resource_types-1">store_target_resource_types/1</a></h3>
+<div class="spec">
+<p><tt>store_target_resource_types(TargetTypes::[atom()]) -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>Store the target types for the local system. Store an "I Want"
+       type. These are the types we wish to find among the node cluster.</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc</i></p>
+</body>
+</html>

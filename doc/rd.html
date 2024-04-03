@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module rd</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module rd</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>.
+<p>Copyright © (C) 2023, c50</p>
+
+<p><b>Behaviours:</b> <a href="gen_server.html"><tt>gen_server</tt></a>.</p>
+<p><b>Authors:</b> c50 (<a href="mailto:joq62@c50"><tt>joq62@c50</tt></a>).</p>
+
+<h2><a name="description">Description</a></h2>
+  
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#add_local_resource-2">add_local_resource/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#add_target_resource_type-1">add_target_resource_type/1</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#call-4">call/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#call-5">call/5</a></td><td></td></tr>
+<tr><td valign="top"><a href="#delete_local_resource_tuple-2">delete_local_resource_tuple/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#detect_target_resources-2">detect_target_resources/2</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#fetch_resources-1">fetch_resources/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_all_resources-0">get_all_resources/0</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#get_delete_local_resource_tuples-0">get_delete_local_resource_tuples/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_monitored_nodes-0">get_monitored_nodes/0</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#get_state-0">get_state/0</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#handle_call-3">handle_call/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#ping-0">ping/0</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#start-0">start/0</a></td><td>.</td></tr>
+<tr><td valign="top"><a href="#start_link-0">start_link/0</a></td><td>
+  Starts the server.</td></tr>
+<tr><td valign="top"><a href="#stop-0">stop/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#trade_resources-0">trade_resources/0</a></td><td></td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="add_local_resource-2">add_local_resource/2</a></h3>
+<div class="spec">
+<p><tt>add_local_resource(ResourceType, Resource) -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="add_target_resource_type-1">add_target_resource_type/1</a></h3>
+<div class="spec">
+<p><tt>add_target_resource_type(ResourceType) -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="call-4">call/4</a></h3>
+<div class="spec">
+<p><tt>call(ResourceType, Function, Args, Timeout) -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="call-5">call/5</a></h3>
+<div class="spec">
+<p><tt>call(ResourceType, Module, Function, Args, Timeout) -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="delete_local_resource_tuple-2">delete_local_resource_tuple/2</a></h3>
+<div class="spec">
+<p><tt>delete_local_resource_tuple(ResourceType, Resource) -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="detect_target_resources-2">detect_target_resources/2</a></h3>
+<div class="spec">
+<p><tt>detect_target_resources(TargetTypes, MaxDetectTime) -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="fetch_resources-1">fetch_resources/1</a></h3>
+<div class="spec">
+<p><tt>fetch_resources(ResourceType) -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_all_resources-0">get_all_resources/0</a></h3>
+<div class="spec">
+<p><tt>get_all_resources() -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="get_delete_local_resource_tuples-0">get_delete_local_resource_tuples/0</a></h3>
+<div class="spec">
+<p><tt>get_delete_local_resource_tuples() -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_monitored_nodes-0">get_monitored_nodes/0</a></h3>
+<div class="spec">
+<p><tt>get_monitored_nodes() -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="get_state-0">get_state/0</a></h3>
+<div class="spec">
+<p><tt>get_state() -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="handle_call-3">handle_call/3</a></h3>
+<div class="spec">
+<p><tt>handle_call(UnMatchedSignal, From, State) -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="ping-0">ping/0</a></h3>
+<div class="spec">
+<p><tt>ping() -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="start-0">start/0</a></h3>
+<div class="spec">
+<p><tt>start() -&gt; any()</tt></p>
+<p> </p>
+</div><p>
+ </p>
+
+<h3 class="function"><a name="start_link-0">start_link/0</a></h3>
+<div class="spec">
+<p><tt>start_link() -&gt; {ok, Pid::pid()} | {error, Error::{already_started, pid()}} | {error, Error::term()} | ignore</tt><br></p>
+<p> </p>
+</div><p>
+  Starts the server</p>
+
+<h3 class="function"><a name="stop-0">stop/0</a></h3>
+<div class="spec">
+<p><tt>stop() -&gt; any()</tt></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="trade_resources-0">trade_resources/0</a></h3>
+<div class="spec">
+<p><tt>trade_resources() -&gt; any()</tt></p>
+<p> </p>
+</div>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc</i></p>
+</body>
+</html>
