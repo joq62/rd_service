@@ -130,7 +130,6 @@ get_state()->
 %% @end
 %%--------------------------------------------------------------------
 ping()-> 
-    io:format("Start ~p~n",[{?MODULE,?FUNCTION_NAME,?LINE}]),
     gen_server:call(?SERVER, {ping},infinity).
 %%--------------------------------------------------------------------
 %% @doc
@@ -142,9 +141,7 @@ ping()->
 	  {error, Error :: term()} |
 	  ignore.
 start_link() ->
-    R=gen_server:start_link({local, ?SERVER}, ?MODULE, [], []),
-    io:format("R ~p~n",[{R,?MODULE,?FUNCTION_NAME,?LINE}]), 
-    R.
+    gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
 
 stop()-> gen_server:call(?SERVER, {stop},infinity).
