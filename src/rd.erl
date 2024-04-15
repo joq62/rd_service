@@ -27,6 +27,7 @@
 	 delete_local_resource_tuple/2,
 	 get_delete_local_resource_tuples/0,
 	 fetch_resources/1,
+	 fetch_nodes/1,
 	 trade_resources/0,
 	 get_monitored_nodes/0,
 	 get_all_resources/0,
@@ -88,6 +89,8 @@ delete_local_resource_tuple(ResourceType, Resource) ->
 get_delete_local_resource_tuples() ->
     gen_server:call(?SERVER, {get_delete_local_resource_tuples},infinity).
 
+fetch_nodes(ResourceType) ->
+    gen_server:call(?SERVER, {fetch_nodes, ResourceType}).
 fetch_resources(ResourceType) ->
     gen_server:call(?SERVER, {fetch_resources, ResourceType}).
 
@@ -179,6 +182,12 @@ init([]) ->
 %%          {stop, Reason, Reply, State}   | (terminate/2 is called)
 %%          {stop, Reason, State}            (terminate/2 is called)
 %% --------------------------------------------------------------------
+
+
+handle_call({fetch_nodes,Type},_From, State) ->
+    Reply=[Node||{_,Node}<-rd_store:get_resources(Type)],
+    {reply, Reply, State};
+
 handle_call({fetch_resources,Type},_From, State) ->
     Reply=rd_store:get_resources(Type),
     {reply, Reply, State};
